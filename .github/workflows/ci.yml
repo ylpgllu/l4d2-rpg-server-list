@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron:  '0 8 * * FRI'  # At 08:00 on Friday.
+    - cron:  '* 2,5,8,11,14,17,21,24,27,29,31,34,37,39,41,44,47,49,51,54,57 * * * ? '  # At 08:00 on Friday.
 
 jobs:
   generate_rpg_list:
@@ -19,8 +19,8 @@ jobs:
     - run: sudo apt install -y curl jq
     - shell: bash
       env:
-        API_KEY: ${{ secrets.api_key }}
-      run: ./build-rpglist.sh "$API_KEY"
+        steam_api_key: ${{ secrets.steam_api_key }}
+      run: ./build-rpglist.sh "$steam_api_key"
         
     - name: Set date env
       run: echo "TODAY=$(date '+%Y/%m/%d')" >> $GITHUB_ENV
@@ -31,3 +31,14 @@ jobs:
         files: rpglist.json
         tag_name: latest
         name: ${{ env.TODAY }}
+    - name: commit
+      run: |
+        git config --global user.email "xunpod@hotmail.com"
+        git config --global user.name "xunpod"
+        git add .
+        git commit -m "update list" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.UPDATE_TOKEN }}

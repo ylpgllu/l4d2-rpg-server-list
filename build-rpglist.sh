@@ -1,7 +1,6 @@
 #!/bin/bash
 
-api_key="$1"
-
+time=$(date +%Y-%m-%d-%H:%M:%S) 
 if [ ${#api_key} -ne 32 ]; then
     echo -e "Usage: \n\t $(basename "$0") API_KEY\n"
     echo "ERROR: need a valid api_key, get it from https://steamcommunity.com/dev/apikey"
@@ -10,11 +9,10 @@ fi
 
 rpg_name_pattern=$(echo '
       [^非]RPG
-    | 戮
-    | 弑
-    | 巅
-    | 凡
-    | 玄
+    | 上帝之手
+    | 弑神巅峰
+    | 暗黑之魂
+    | [趣味]-
     | 天下
     | 神域
     | 完美世界
@@ -33,6 +31,17 @@ rpg_name_pattern=$(echo '
     | 通天塔
     | 无法逃脱
     | 穷途末路
+    | 烈焰
+    | 经典怀旧服
+    | 星缘天空
+    | 紫金之巅
+    | 梦幻天堂
+    | AK0048
+    | 杀戮时刻
+    | 杀戮世界
+    | Tank杀戮
+    | 橡子杀戮
+    | 幻想杀戮
     ' \
     | tr -d '[:space:]'
 )
@@ -57,4 +66,5 @@ curl -sS --get \
         ]
         | unique_by(.raddr)
     }' \
-> rpglist.json
+> rpglist-${time}.json
+cp rpglist-${time}.json rpglist-latest.json
