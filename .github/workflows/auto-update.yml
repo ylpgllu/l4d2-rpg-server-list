@@ -40,7 +40,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: rpglist-latest.json
-        tag_name: 'auto update'
+        tag_name: latest
         name: 'auto update list-${{ env.TODAY }}'
       env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
