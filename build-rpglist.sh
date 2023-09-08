@@ -65,5 +65,5 @@ curl -sS --get \
         ]
         | unique_by(.raddr)
     }' \
-> rpglist-$(date '+%Y/%m/%d').json
-cp rpglist-$(date '+%Y/%m/%d').json rpglist-latest.json
+> rpglist-$(date '+%Y-%m-%d').json
+cp rpglist-$(date '+%Y-%m-%d').json rpglist-latest.json

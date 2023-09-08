@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ListFile="$1"
-IPListName=l4d2-rpg-blacklist
+IPListName=l4d2-rpg-list
 
 if [ $(iptables -L | grep -c $IPListName) -eq 0 ]; then
     ipset create $IPListName hash:ip hashsize 4096

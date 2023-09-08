@@ -24,7 +24,7 @@ jobs:
       run: ./build-rpglist.sh "$steam_api_key"
         
     - name: Set date env
-      run: echo "TODAY=$(date '+%Y/%m/%d')" >> $GITHUB_ENV
+      run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
         
     - name: commit
       run: |
