@@ -1,5 +1,5 @@
 #!/bin/bash
-
+api_key="$1"
 time=$(date +%Y-%m-%d-%H:%M:%S) 
 if [ ${#api_key} -ne 32 ]; then
     echo -e "Usage: \n\t $(basename "$0") API_KEY\n"
