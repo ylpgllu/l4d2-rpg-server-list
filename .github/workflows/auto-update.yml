@@ -22,16 +22,13 @@ jobs:
       env:
         steam_api_key: ${{ secrets.steam_api_key }}
       run: ./build-rpglist.sh "$steam_api_key"
-        
-    - name: Set date env
-      run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
-        
+
     - name: commit
       run: |
         git config --global user.email "xunpod@hotmail.com"
         git config --global user.name "xunpod"
         git add .
-        git commit -m "auto update list" -a
+        git commit -m "auto update" -a
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
@@ -41,6 +38,6 @@ jobs:
       with:
         files: rpglist-latest.json
         tag_name: latest
-        name: 'auto update list-${{ env.TODAY }}'
+        name: '$(date '+%Y/%m/%d')'
       env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
