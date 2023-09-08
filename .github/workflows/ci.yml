@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron:  '30 5,16 * * *' # At 08:00 on Friday.
+    - cron:  '37 5,16 * * *' # At 08:00 on Friday.
 
 jobs:
   generate_rpg_list:
@@ -25,12 +25,6 @@ jobs:
     - name: Set date env
       run: echo "TODAY=$(date '+%Y/%m/%d')" >> $GITHUB_ENV
         
-    - name: Update Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: rpglist-latest.json
-        tag_name: latest
-        name: ${{ env.TODAY }}
     - name: commit
       run: |
         git config --global user.email "xunpod@hotmail.com"
@@ -41,4 +35,12 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
+        github_token: ${{ secrets.UPDATE_TOKEN }}
+    
+    - name: Update Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: rpglist-latest.json
+        tag_name: latest
+        name: ${{ env.TODAY }}
         github_token: ${{ secrets.UPDATE_TOKEN }}
