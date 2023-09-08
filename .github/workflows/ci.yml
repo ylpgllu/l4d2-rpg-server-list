@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron:  '09 5,17 * * *' # At 08:00 on Friday.
+    - cron:  '12 5,17 * * *' # At 08:00 on Friday.
 permissions:
   contents: write
 jobs:
@@ -32,8 +32,8 @@ jobs:
         git config --global user.name "xunpod"
         git add .
         git commit -m "update list" -a
-        git push origin main
-      with:
+        git push
+      env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
     
     - name: Update Release
@@ -42,4 +42,5 @@ jobs:
         files: rpglist-latest.json
         tag_name: latest
         name: ${{ env.TODAY }}
+      env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
