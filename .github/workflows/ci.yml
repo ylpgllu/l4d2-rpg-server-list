@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron:  '0 0/2 * * * ?'  # At 08:00 on Friday.
+    - cron:  0 0/2 * * * ? # At 08:00 on Friday.
 
 jobs:
   generate_rpg_list:
