@@ -1,4 +1,4 @@
-name: CI
+name: auto-update
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron:  '12 5,17 * * *' # At 08:00 on Friday.
+    - cron:  '16 5,18 * * *' # At 08:00 on Friday.
 permissions:
   contents: write
 jobs:
@@ -31,7 +31,7 @@ jobs:
         git config --global user.email "xunpod@hotmail.com"
         git config --global user.name "xunpod"
         git add .
-        git commit -m "update list" -a
+        git commit -m "auto update list" -a
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
@@ -40,7 +40,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: rpglist-latest.json
-        tag_name: latest
-        name: ${{ env.TODAY }}
+        tag_name: 'auto update'
+        name: 'auto update list-${{ env.TODAY }}'
       env:
         GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
