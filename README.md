@@ -4,9 +4,11 @@
 
 ## 更新方式
 
-本项目每天自动更新RPG服务器列表，每周更新关键词，并不定期与[L4D2_RPG_Blocker](https://github.com/razerdp/L4D2_RPG_Blocker)项目成果进行合并。如果出现误报、漏扫、需要升级等情况，请及时联系我([Steam](https://steamcommunity.com/profiles/76561199403165320/)/[lssues](https://github.com/xunpod/l4d2-rpg-server-list/issues)/[邮件](mailto:xunpod@hotmail.com))。
+本项目使用Github Action，自动更新RPG服务器列表，并不定期与[L4D2_RPG_Blocker](https://github.com/razerdp/L4D2_RPG_Blocker)项目成果进行合并。如果出现误报、漏扫、需要升级等情况，请及时联系我([Steam](https://steamcommunity.com/profiles/76561199403165320/)/[lssues](https://github.com/xunpod/l4d2-rpg-server-list/issues)/[邮件](mailto:xunpod@hotmail.com))。
 
-获取地址方式：[Github Release](https://github.com/xunpod/l4d2-rpg-server-list/releases/latest/download/rpglist-latest.json)
+获取地址1：[Github Release](https://github.com/xunpod/l4d2-rpg-server-list/releases/latest/download/rpglist-latest.json)  
+
+获取地址2：[Github加速镜像](https://ghproxy.com/https://github.com/xunpod/l4d2-rpg-server-list/releases/latest/download/rpglist-latest.json)
 
 在Windows与Linux中，使用如下终端命令获取：
 
