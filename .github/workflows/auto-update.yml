@@ -28,8 +28,6 @@ jobs:
     
     - name: commit
       run: |
-        git config --global user.email "xunpod@hotmail.com"
-        git config --global user.name "xunpod"
         git add .
         git commit -m "auto update" -a
         git push
