@@ -4,7 +4,7 @@
 
 ## 更新方式
 
-本项目使用Github Action，自动更新RPG服务器列表，并不定期与[L4D2_RPG_Blocker](https://github.com/razerdp/L4D2_RPG_Blocker)项目成果进行合并。如果出现误报、漏扫、需要升级等情况，请及时联系我([Steam](https://steamcommunity.com/profiles/76561199403165320/)/[lssues](https://github.com/xunpod/l4d2-rpg-server-list/issues)/[邮件](mailto:xunpod@hotmail.com))。
+本项目使用Github Action自动更新RPG服务器列表，并不定期与[L4D2_RPG_Blocker](https://github.com/razerdp/L4D2_RPG_Blocker)项目成果进行合并。如果出现误报、漏扫、需要升级等情况，请及时联系我([Steam](https://steamcommunity.com/profiles/76561199403165320/)/[lssues](https://github.com/xunpod/l4d2-rpg-server-list/issues)/[邮件](mailto:xunpod@hotmail.com))。
 
 获取地址1：[Github Release](https://github.com/xunpod/l4d2-rpg-server-list/releases/latest/download/rpglist-latest.json)  
 
@@ -97,11 +97,11 @@ cd l4d2-rpg-server-list
 | Name   | STEAM_API_KEY             | UPDATE_TOKEN            |
 | Secret | 步骤1申请到的SteamAPI KEY | 步骤2生成的Github Token |
 
-自动更新时间为每天零点，可以在`auto-update.yml`中更改。
+此外，自动更新的时间/频率，可以在`auto-update.yml`中更改。
 
 ## 注意事项
 
-1. 每次导入新列表之前，请删除已经导入的旧数据。
-2. 由于Steam组服务器年事已高，屏蔽部分服务器IP以后，可能会产生BUG，例如正常的组列表服务器加载不完整，但此时你仍可正常使用控制台指令`connect`以及`openserverbrower`连接服务器。
-3. 人力有所不及，代码也是如此，若本项目带来了意料之外的问题，请及时联系我([Steam](https://steamcommunity.com/profiles/76561199403165320/)/[lssues](https://github.com/xunpod/l4d2-rpg-server-list/issues)/[邮件](mailto:xunpod@hotmail.com))。
+1. 为避免影响正常的网络服务，建议每次导入最新列表之前，删除已经导入的旧数据。
+2. 由于Steam组服务器年事已高，屏蔽部分服务器IP以后，可能会产生BUG，例如正常的组列表服务器加载不完整，但仍可使用控制台指令`connect`以及`openserverbrower`连接服务器。
+3. 人力有所不及，代码也是如此，若本项目出现意料之外的问题，请及时联系我([Steam](https://steamcommunity.com/profiles/76561199403165320/)/[lssues](https://github.com/xunpod/l4d2-rpg-server-list/issues)/[邮件](mailto:xunpod@hotmail.com))。
 
