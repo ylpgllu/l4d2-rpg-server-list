@@ -28,8 +28,8 @@ jobs:
     
     - name: commit
       run: |
-	      git config --local user.email "xunpod@hotmail.com"
-	      git config --local user.name "xunpod"
+	git config --global user.name "Github Action"
+	git config --global user.email "action@github.com"
         git add .
         git commit -m "auto update" -a
         git push
