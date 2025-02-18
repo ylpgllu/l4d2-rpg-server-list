@@ -45,7 +45,8 @@ rpg_name_pattern=$(echo '
     | 夏洛克
     | 无限火力
     | 643057081
-    | 多特	
+    | 多特
+    | 58DTF	
     ' \
     | tr -d '[:space:]'
 )
