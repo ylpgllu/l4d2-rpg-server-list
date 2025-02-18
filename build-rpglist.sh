@@ -41,6 +41,11 @@ rpg_name_pattern=$(echo '
     | Tank杀戮
     | 橡子杀戮
     | 幻想杀戮
+    | CN
+    | 夏洛克
+    | 无限火力
+    | 643057081
+    | 多特	
     ' \
     | tr -d '[:space:]'
 )
