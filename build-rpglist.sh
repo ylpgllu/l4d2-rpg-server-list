@@ -7,11 +7,10 @@ if [ ${#api_key} -ne 32 ]; then
 fi
 
 rpg_name_pattern=$(echo '
-      [^非]RPG
-    | Valve
-    | 2 Hong Kong
-    | 2 Japan
-    | 2 Asia	
+    Valve
+    |Hong
+    |Japan
+    |Asia	
     ' \
     | tr -d '[:space:]'
 )
